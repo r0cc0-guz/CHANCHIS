@@ -4,47 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHANCHIS</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <img class="side-image left-image" alt="Imagen izquierda">
-            <img class="side-image right-image" alt="Imagen derecha">
+    <div class="contenedor">
+        <div class="tarjeta">
+            <img class="imagen-lateral imagen-izquierda" alt="Imagen izquierda">
+            <img class="imagen-lateral imagen-derecha" alt="Imagen derecha">
             <h1>CHANCHIS</h1>
-            <img src="img/centro-pic.png" alt="Imagen central" class="center-image">
-            <div class="social-links">
-                <a href="https://discord.gg/2F42ZuFCby" target="_blank" rel="noopener noreferrer" class="social-link discord">
+            <img src="img/centro-pic.png" alt="Imagen central" class="imagen-central">
+            <div class="enlaces-sociales">
+                <a href="https://discord.gg/2F42ZuFCby" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="enlace-social discord"
+                   onclick="window.open(this.href, '_blank')">
                     <i class="fab fa-discord"></i>
                     <span>Discord</span>
                 </a>
-                <a class="social-link kick" style="pointer-events: none;">
+                
+                <div class="enlace-social kick">
                     <i class="fas fa-play"></i>
                     <span>Kick</span>
-                    <span class="coming-soon">Proximamente...</span>
-                </a>
-                <a class="social-link twitch" style="pointer-events: none;">
+                    <span class="proximamente">Proximamente...</span>
+                </div>
+                
+                <div class="enlace-social twitch">
                     <i class="fab fa-twitch"></i>
                     <span>Twitch</span>
-                    <span class="coming-soon">Proximamente...</span>
-                </a>
-                <a href="https://youtube.com/@guadi47?si=koNELUaponadjH6U" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+                    <span class="proximamente">Proximamente...</span>
+                </div>
+                
+                <a href="https://youtube.com/@guadi47?si=koNELUaponadjH6U" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="enlace-social youtube"
+                   onclick="window.open(this.href, '_blank')">
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
-                <a href="https://www.tiktok.com/@guadibyily._?_t=ZM-8tjtCYEhup3&_r=1" target="_blank" rel="noopener noreferrer" class="social-link tiktok">
+                
+                <a href="https://www.tiktok.com/@guadibyily._?_t=ZM-8tjtCYEhup3&_r=1" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="enlace-social tiktok"
+                   onclick="window.open(this.href, '_blank')">
                     <i class="fab fa-tiktok"></i>
                     <span>TikTok</span>
                 </a>
-                <a class="social-link instagram" style="pointer-events: none;">
+                
+                <div class="enlace-social instagram">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
-                    <span class="coming-soon">Proximamente...</span>
-                </a>
+                    <span class="proximamente">Proximamente...</span>
+                </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
