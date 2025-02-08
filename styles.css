@@ -1,4 +1,3 @@
-/* Importación de las fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
@@ -18,18 +17,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow-x: hidden;
 }
 
-.container {
+.contenedor {
     width: 100%;
     max-width: 600px;
     padding: 15px;
     margin: 10px;
 }
 
-.card {
+.tarjeta {
     background: rgba(247, 207, 216, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -39,45 +36,58 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: 1;
-    min-height: 600px;
 }
 
 h1 {
-    font-family: 'Pacifico', cursive;
     text-align: center;
     margin-bottom: 8px;
-    background: linear-gradient(45deg, 
-        rgba(255, 99, 132, 0.9),  /* Rosa frutilla */
-        rgba(255, 0, 68, 0.9)     /* Rojo frutilla */
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: rgba(115, 199, 199, 0.9);
     font-weight: 700;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     font-size: clamp(24px, 5vw, 32px);
-    position: relative;
-    z-index: 2;
 }
 
-.social-links {
+.imagen-central {
+    width: 70px;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
     position: relative;
-    z-index: 2;
-    width: 60%;
-    margin: 0 auto;
+    z-index: 1;
+}
+
+.imagen-lateral {
+    position: absolute;
+    height: 140px;
+    width: auto;
+    top: 25px;
+    animation: brilloPersonaje 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+.imagen-izquierda {
+    right: 25px;
+    content: url('img/der-pic.png');
+}
+
+.imagen-derecha {
+    left: 25px;
+    content: url('img/izq-pic.png');
+}
+
+.enlaces-sociales {
     margin-top: 8px;
     display: flex;
     flex-direction: column;
     gap: clamp(8px, 2vw, 12px);
 }
 
-.social-link {
+.enlace-social {
     display: flex;
     align-items: center;
     padding: clamp(12px, 3vw, 15px);
-    text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.95);
     background: rgba(222, 49, 99, 0.35);
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -87,18 +97,28 @@ h1 {
     position: relative;
 }
 
-.social-link i {
+a.enlace-social {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div.enlace-social {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.enlace-social i {
     font-size: clamp(18px, 4vw, 20px);
     margin-right: 15px;
     width: 25px;
 }
 
-.social-link span {
+.enlace-social span {
     font-size: clamp(14px, 3vw, 16px);
     letter-spacing: 0.5px;
 }
 
-.coming-soon {
+.proximamente {
     position: absolute;
     right: 15px;
     font-size: 0.8em;
@@ -107,111 +127,7 @@ h1 {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Orden específico de los botones */
-.discord { order: 1; }
-.kick { order: 2; }
-.twitch { order: 3; }
-.youtube { order: 4; }
-.tiktok { order: 5; }
-.instagram { order: 6; }
-
-/* Estilos hover específicos */
-.kick:hover {
-    background: rgba(83, 195, 0, 0.5);
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(83, 195, 0, 0.15);
-}
-
-.twitch:hover {
-    background: rgba(145, 70, 255, 0.5);
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(145, 70, 255, 0.15);
-}
-
-.youtube:hover {
-    background: rgba(255, 0, 0, 0.5);
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15);
-}
-
-.tiktok:hover {
-    background: rgba(0, 0, 0, 0.5);
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-.instagram:hover {
-    background: linear-gradient(
-        45deg,
-        rgba(64, 93, 230, 0.5),
-        rgba(88, 81, 219, 0.5),
-        rgba(131, 58, 180, 0.5),
-        rgba(193, 53, 132, 0.5),
-        rgba(225, 48, 108, 0.5),
-        rgba(253, 29, 29, 0.5)
-    );
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(193, 53, 132, 0.15);
-}
-
-.discord:hover {
-    background: rgba(88, 101, 242, 0.5);
-    transform: translateX(10px);
-    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.15);
-    border-color: rgba(88, 101, 242, 0.3);
-}
-
-/* Media queries para mejor responsividad */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-    
-    .social-link {
-        padding: 12px;
-    }
-    
-    .social-link:hover {
-        transform: translateX(5px);
-    }
-    
-    .coming-soon {
-        font-size: 0.7em;
-        right: 10px;
-    }
-}
-
-@media (max-width: 320px) {
-    .card {
-        padding: 15px;
-    }
-    
-    h1 {
-        margin-bottom: 15px;
-    }
-}
-
-/* Actualización de los estilos de las imágenes laterales */
-.side-image {
-    position: absolute;
-    height: 140px;
-    width: auto;
-    top: 25px;
-    animation: characterGlow 2s ease-in-out infinite;
-    z-index: 0;
-}
-
-.left-image {
-    right: 25px;
-    content: url('img/der-pic.png');
-}
-
-.right-image {
-    left: 25px;
-    content: url('img/izq-pic.png');
-}
-
-@keyframes characterGlow {
+@keyframes brilloPersonaje {
     0% {
         filter: drop-shadow(0 0 2px rgba(255, 167, 193, 0.6))
                drop-shadow(0 0 4px rgba(255, 167, 193, 0.5))
@@ -229,62 +145,48 @@ h1 {
     }
 }
 
-/* Efecto hover mejorado */
-.side-image:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 167, 193, 1))
-           drop-shadow(0 0 15px rgba(255, 167, 193, 0.8))
-           drop-shadow(0 0 20px rgba(255, 167, 193, 0.6));
-    transition: filter 0.3s ease;
+.discord:hover { background: rgba(88, 101, 242, 0.5); }
+.kick:hover { background: rgba(83, 195, 0, 0.5); }
+.twitch:hover { background: rgba(145, 70, 255, 0.5); }
+.youtube:hover { background: rgba(255, 0, 0, 0.5); }
+.tiktok:hover { background: rgba(0, 0, 0, 0.5); }
+.instagram:hover { background: rgba(225, 48, 108, 0.5); }
+
+.enlace-social:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Media queries actualizados */
 @media (max-width: 1200px) {
-    .side-image {
+    .imagen-lateral {
         height: 120px;
-    }
-    
-    .social-links {
-        width: 70%;
     }
 }
 
 @media (max-width: 992px) {
-    .side-image {
+    .imagen-lateral {
         height: 100px;
         top: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .side-image {
+    .imagen-lateral {
         display: none;
     }
-    
-    .social-links {
-        width: 100%;
-    }
-}
-
-.center-image {
-    width: 70px;
-    height: auto;
-    display: block;
-    margin: 0 auto 12px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Media queries para la imagen central */
-@media (max-width: 768px) {
-    .center-image {
+    .imagen-central {
         width: 60px;
         margin: 0 auto 10px;
     }
 }
 
 @media (max-width: 480px) {
-    .center-image {
+    .imagen-central {
         width: 50px;
         margin: 0 auto 8px;
     }
-} 
+    .proximamente {
+        font-size: 0.7em;
+        right: 10px;
+    }
+}
