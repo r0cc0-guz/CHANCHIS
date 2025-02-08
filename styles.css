@@ -1,0 +1,290 @@
+/* Importación de las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-image: url('img/fondo-principal.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.card {
+    background: rgba(247, 207, 216, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: clamp(15px, 4vw, 30px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    min-height: 600px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin-bottom: 8px;
+    background: linear-gradient(45deg, 
+        rgba(255, 99, 132, 0.9),  /* Rosa frutilla */
+        rgba(255, 0, 68, 0.9)     /* Rojo frutilla */
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: clamp(24px, 5vw, 32px);
+    position: relative;
+    z-index: 2;
+}
+
+.social-links {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 2vw, 12px);
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: clamp(12px, 3vw, 15px);
+    text-decoration: none;
+    color: white;
+    background: rgba(222, 49, 99, 0.35);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.social-link i {
+    font-size: clamp(18px, 4vw, 20px);
+    margin-right: 15px;
+    width: 25px;
+}
+
+.social-link span {
+    font-size: clamp(14px, 3vw, 16px);
+    letter-spacing: 0.5px;
+}
+
+.coming-soon {
+    position: absolute;
+    right: 15px;
+    font-size: 0.8em;
+    opacity: 0.8;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Orden específico de los botones */
+.discord { order: 1; }
+.kick { order: 2; }
+.twitch { order: 3; }
+.youtube { order: 4; }
+.tiktok { order: 5; }
+.instagram { order: 6; }
+
+/* Estilos hover específicos */
+.kick:hover {
+    background: rgba(83, 195, 0, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(83, 195, 0, 0.15);
+}
+
+.twitch:hover {
+    background: rgba(145, 70, 255, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(145, 70, 255, 0.15);
+}
+
+.youtube:hover {
+    background: rgba(255, 0, 0, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.15);
+}
+
+.tiktok:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.instagram:hover {
+    background: linear-gradient(
+        45deg,
+        rgba(64, 93, 230, 0.5),
+        rgba(88, 81, 219, 0.5),
+        rgba(131, 58, 180, 0.5),
+        rgba(193, 53, 132, 0.5),
+        rgba(225, 48, 108, 0.5),
+        rgba(253, 29, 29, 0.5)
+    );
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(193, 53, 132, 0.15);
+}
+
+.discord:hover {
+    background: rgba(88, 101, 242, 0.5);
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.15);
+    border-color: rgba(88, 101, 242, 0.3);
+}
+
+/* Media queries para mejor responsividad */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .social-link {
+        padding: 12px;
+    }
+    
+    .social-link:hover {
+        transform: translateX(5px);
+    }
+    
+    .coming-soon {
+        font-size: 0.7em;
+        right: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .card {
+        padding: 15px;
+    }
+    
+    h1 {
+        margin-bottom: 15px;
+    }
+}
+
+/* Actualización de los estilos de las imágenes laterales */
+.side-image {
+    position: absolute;
+    height: 140px;
+    width: auto;
+    top: 25px;
+    animation: characterGlow 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+.left-image {
+    right: 25px;
+    content: url('img/der-pic.png');
+}
+
+.right-image {
+    left: 25px;
+    content: url('img/izq-pic.png');
+}
+
+@keyframes characterGlow {
+    0% {
+        filter: drop-shadow(0 0 2px rgba(255, 167, 193, 0.6))
+               drop-shadow(0 0 4px rgba(255, 167, 193, 0.5))
+               drop-shadow(0 0 6px rgba(255, 167, 193, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 6px rgba(255, 167, 193, 0.9))
+               drop-shadow(0 0 12px rgba(255, 167, 193, 0.8))
+               drop-shadow(0 0 18px rgba(255, 167, 193, 0.7));
+    }
+    100% {
+        filter: drop-shadow(0 0 2px rgba(255, 167, 193, 0.6))
+               drop-shadow(0 0 4px rgba(255, 167, 193, 0.5))
+               drop-shadow(0 0 6px rgba(255, 167, 193, 0.4));
+    }
+}
+
+/* Efecto hover mejorado */
+.side-image:hover {
+    filter: drop-shadow(0 0 10px rgba(255, 167, 193, 1))
+           drop-shadow(0 0 15px rgba(255, 167, 193, 0.8))
+           drop-shadow(0 0 20px rgba(255, 167, 193, 0.6));
+    transition: filter 0.3s ease;
+}
+
+/* Media queries actualizados */
+@media (max-width: 1200px) {
+    .side-image {
+        height: 120px;
+    }
+    
+    .social-links {
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .side-image {
+        height: 100px;
+        top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-image {
+        display: none;
+    }
+    
+    .social-links {
+        width: 100%;
+    }
+}
+
+.center-image {
+    width: 70px;
+    height: auto;
+    display: block;
+    margin: 0 auto 12px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Media queries para la imagen central */
+@media (max-width: 768px) {
+    .center-image {
+        width: 60px;
+        margin: 0 auto 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-image {
+        width: 50px;
+        margin: 0 auto 8px;
+    }
+} 
