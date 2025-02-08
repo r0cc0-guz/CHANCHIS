@@ -267,6 +267,10 @@ h1 {
     .tarjeta {
         padding: 15px;
     }
+    .cartel-agradecimiento {
+        width: 90%;
+        padding: 15px 20px;
+    }
 }
 
 @media (max-width: 320px) {
@@ -291,4 +295,37 @@ h1 {
     h1 {
         margin-top: 30px;
     }
+}
+
+/* Estilos para el cartel de agradecimiento */
+.cartel-agradecimiento {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(247, 207, 216, 0.95);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    font-size: clamp(16px, 3vw, 20px);
+    display: none;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cartel-agradecimiento div {
+    font-family: 'Pacifico', cursive;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.cartel-agradecimiento img {
+    width: 100px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    order: 2;
 } 
