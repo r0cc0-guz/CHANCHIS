@@ -1,12 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.social-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const enlacesActivos = document.querySelectorAll('a.enlace-social');
     
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Aquí puedes agregar las URLs reales de tus redes sociales
-            const socialMedia = this.querySelector('span').textContent.toLowerCase();
-            // Ejemplo: window.location.href = 'https://www.instagram.com/tu-usuario';
+    enlacesActivos.forEach(enlace => {
+        enlace.addEventListener('click', (evento) => {
+            const url = enlace.getAttribute('href');
+            window.open(url, '_blank', 'noopener,noreferrer');
         });
     });
-}); 
+
+    const imagenes = document.querySelectorAll('img');
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('dragstart', (e) => e.preventDefault());
+        imagen.addEventListener('contextmenu', (e) => e.preventDefault());
+    });
+});
