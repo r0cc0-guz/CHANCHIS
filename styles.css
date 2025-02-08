@@ -95,16 +95,13 @@ h1 {
     backdrop-filter: blur(3px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
-}
-
-a.enlace-social {
-    cursor: pointer;
     text-decoration: none;
 }
 
-div.enlace-social {
-    cursor: default;
+.desactivado {
     opacity: 0.8;
+    cursor: default;
+    pointer-events: none;
 }
 
 .enlace-social i {
@@ -152,7 +149,7 @@ div.enlace-social {
 .tiktok:hover { background: rgba(0, 0, 0, 0.5); }
 .instagram:hover { background: rgba(225, 48, 108, 0.5); }
 
-.enlace-social:hover {
+.enlace-social:not(.desactivado):hover {
     transform: translateX(10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
